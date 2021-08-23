@@ -3,7 +3,7 @@ import Layout from '../../components/layout/Layout'
 
 const sobreNosotrosViewPublic = () => {
     return (
-        <Layout>
+        <Layout title='Sobre Nosotros'>
             sobreNosotrosViewPublic
         </Layout>
     )

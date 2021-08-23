@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-const Layout = ({children}) => {
+import Helmet from 'react-helmet'
+const Layout = ({children, title}) => {
     return (
         <>
+            <Helmet>
+                <title>ENERGYT | {title}</title>
+            </Helmet>
             <header>
                 <ul style={{display: 'flex', flexDirection:'column'}}>
                     <Link to='/' >Home</Link>
