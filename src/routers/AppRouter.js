@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
-import LoadingPage from '../components/loading/LoadingPage'
+//import LoadingPage from '../components/loading/LoadingPage'
 import PrivateRouter from './PrivateRouter'
 import PublicRouter from './PublicRouter'
 import RoutersPrivate from './RoutersPrivate'

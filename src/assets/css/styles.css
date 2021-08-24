@@ -1,5 +1,172 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
+
+header {
+  width: 100%;
+  height: 100vh;
+  background: #14740f;
+  background: -webkit-linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada/portada01.jpg);
+  background: linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada/portada01.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+header nav {
+  text-align: right;
+  padding: 30px 50px 0 0;
+}
+header nav > a {
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+header nav > a:hover {
+  text-decoration: underline;
+}
+header .textos-header {
+  display: flex;
+  height: 430px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+header .textos-header h1 {
+  font-size: 50px;
+  color: #FFF;
+}
+header .textos-header h2 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #FFF;
+}
+header .wave {
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    background-position: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  header .textos-header h1 {
+    font-size: 40px;
+  }
+  header .textos-header h2 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 414px) {
+  header nav {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  header nav a {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 360px) {
+  header nav {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  header nav a {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+footer {
+  background: #cecedd;
+  padding: 160px 0 50px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: #FFFFFF;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+footer .contenedor-footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #ccc;
+}
+footer .contenedor-footer .content-foo {
+  text-align: center;
+  margin-bottom: 2%;
+  color: #14740f;
+}
+footer .contenedor-footer .content-foo h4 {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+footer .contenedor-footer .content-foo .p-email::after {
+  content: " info@energyt.co";
+}
+footer .footer__social {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+footer .footer__social .footer__link {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer__social .footer__link:first-of-type {
+  background: #2f4d84;
+}
+footer .footer__social .footer__link:nth-of-type(2) {
+  background: #C4302B;
+}
+footer .footer__social .footer__link:last-of-type {
+  background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+}
+footer .footer__social .footer__link .footer__icon {
+  margin: 30px;
+}
+footer .titulo-final {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0 0 0;
+  color: #14740f;
+}
+
+/*# sourceMappingURL=styles.css.map */
