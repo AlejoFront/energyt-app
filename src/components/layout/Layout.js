@@ -8,7 +8,9 @@ const Layout = ({children, title}) => {
         <HelmetProvider>
             <Helmet> <title >ENERGYT | {title} </title></Helmet>
             <Header />
+            <main>
                 {children}
+            </main>
             <Footer/>   
         </HelmetProvider>
     )

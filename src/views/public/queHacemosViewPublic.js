@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../components/layout/Layout'
 
-const queHacemosViewPublic = () => {
+const QueHacemosViewPublic = () => {
     return (
         <Layout title='¿Que Hacemos?'>
             queHacemosViewPublic
@@ -9,4 +9,4 @@ const queHacemosViewPublic = () => {
     )
 }
 
-export default queHacemosViewPublic
+export default QueHacemosViewPublic

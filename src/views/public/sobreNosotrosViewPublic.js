@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../../components/layout/Layout'
 
-const sobreNosotrosViewPublic = () => {
+const SobreNosotrosViewPublic = () => {
     return (
         <Layout title='Sobre Nosotros'>
             sobreNosotrosViewPublic
@@ -9,4 +9,4 @@ const sobreNosotrosViewPublic = () => {
     )
 }
 
-export default sobreNosotrosViewPublic
+export default SobreNosotrosViewPublic

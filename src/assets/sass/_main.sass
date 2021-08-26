@@ -1,0 +1,57 @@
+.acerca-de
+    .contenedor-acerca-de
+        display: flex
+        justify-content: center
+        .contenido-textos
+            width: 48%
+            display: flex
+            margin: auto
+            p
+                font-size: 18px
+                text-align: justify
+                b
+                    span
+                        font-size: 15px
+        .imagen-about-us
+            width: 48%
+            
+.nuestros-clientes
+    background: $blanco
+    .galeria-clientes
+        display: flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        .imagen-port
+            width: 24%
+            height: 200px
+            margin-bottom: 15px
+            overflow: hidden
+            position: relative
+            cursor: pointer
+            box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5)
+            > img
+                width: 100%
+                height: 100%
+                object-fit: contain
+                display: block
+            &:hover
+                .hover-galeria
+                    transform: scale(1)
+            .hover-galeria
+                text-decoration: none
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                transform: scale(0)
+                background: $verde-transparencia
+                transition: transform .5s
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                img
+                    width: 150px
+                p
+                    color: #FFF
+                    text-align: center

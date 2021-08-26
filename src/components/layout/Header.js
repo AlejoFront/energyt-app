@@ -1,13 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Nav from './Nav'
+
 const Header = () => {
     return (
         <header>
-            <nav>
-                <Link to='/'>Inicio</Link>
-                <Link to='/sobre-nosotros'>Sobre Nosotros</Link>
-                <Link to='/que-hacemos'>¿Qué Hacemos?</Link>
-            </nav>
+            <Nav />
             <section className="textos-header">
                 <h1>ENERGYT</h1>
                 <h2>Energía y Tecnología S.A.S</h2>
