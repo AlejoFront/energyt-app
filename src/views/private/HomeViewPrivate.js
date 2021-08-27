@@ -1,10 +1,10 @@
 import React from 'react'
+import Dashboard from '../../components/layout/Dashboard'
 
 const HomeViewPrivate = () => {
     return (
-        <div>
-            Vista privada
-        </div>
+        <Dashboard>
+        </Dashboard>
     )
 }
 

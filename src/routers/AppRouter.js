@@ -1,29 +1,39 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import { startLoadFooter } from '../reducer/FooterReducer'
 import {getFooter} from '../helpers/FooterHelpers'
-//import LoadingPage from '../components/loading/LoadingPage'
+import LoadingPage from '../components/loading/LoadingPage'
 import PrivateRouter from './PrivateRouter'
 import PublicRouter from './PublicRouter'
 import RoutersPrivate from './RoutersPrivate'
 import RoutersPublic from './RoutersPublic'
 import { getEstadosFinancieros, getMision, getPoliticas, getProteccionDatos, getVision } from '../helpers/SobreNosotrosHelpers'
 import { startLoadeEstadosFinancieros, startLoadMision, startLoadPoliticas, startLoadProteccion, startLoadVision } from '../reducer/SobreNosotrosReducer'
+import { authLoaded, authLoading, authLogin } from '../reducer/AuthReducer'
 import { getProyectos, getQueHacemos } from '../helpers/QueHacemosHelpers'
 import { startLoadProjects, startLoadQueHacemos } from '../reducer/QueHacemosReducer'
 import { getInnovacion } from '../helpers/InnovacionHelpers'
 import { startLoadInnovacion } from '../reducer/InnovacionReducer'
+import { auth } from '../firebase/firebase'
 
 const AppRouter = () => {
+    const {loading, isAuthenticated} = useSelector(state => state.auth)
     const dispatch = useDispatch()
-    let isAuthenticated = false
 
-    // if (true) {
-    //     return <LoadingPage />
-    // }
+
+
 
     useEffect(() => {
+
+        dispatch(authLoading());
+        auth.onAuthStateChanged(async user =>{
+            if (user?.uid) {
+                dispatch(await authLogin());
+            }else {
+                dispatch(authLoaded());
+            }
+        })
         getFooter()
         .then(response => dispatch(startLoadFooter(response)))
         .catch(e => console.log(e));
@@ -53,6 +63,10 @@ const AppRouter = () => {
         .catch(e => console.log(e));
         return () => {}
     }, [dispatch])
+
+    if (loading) {
+         return <LoadingPage />
+     }
 
     return (
         <Router>

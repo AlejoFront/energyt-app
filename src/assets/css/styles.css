@@ -1047,5 +1047,26 @@ footer .titulo-final {
     background-image: url(../img/valores_corporativos/tolerancia.png);
   }
 }
+.dasboard_conteiner {
+  background: #F2F2F2;
+  min-height: 100vh;
+  display: grid;
+  gap: 10px;
+  grid-template-areas: "barra_lateral barra_superior" "barra_lateral dashboard_main";
+  grid-template-columns: 1fr 7fr;
+  grid-template-rows: 1fr 10fr;
+}
+.dasboard_conteiner div, .dasboard_conteiner main {
+  background: green;
+}
+.dasboard_conteiner .header__dashboard {
+  grid-area: barra_lateral;
+}
+.dasboard_conteiner .bar__dashboard {
+  grid-area: barra_superior;
+}
+.dasboard_conteiner .main__dashboard {
+  grid-area: dashboard_main;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,16 @@
+.dasboard_conteiner
+    background: $gris
+    min-height: 100vh
+    display: grid
+    gap: 10px
+    grid-template-areas: "barra_lateral barra_superior" "barra_lateral dashboard_main"
+    grid-template-columns: 1fr 7fr
+    grid-template-rows: 1fr 10fr
+    div, main
+        background: green
+    .header__dashboard
+        grid-area: barra_lateral
+    .bar__dashboard
+        grid-area: barra_superior
+    .main__dashboard
+        grid-area: dashboard_main
