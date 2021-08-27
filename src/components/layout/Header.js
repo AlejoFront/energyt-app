@@ -6,8 +6,7 @@ const Header = () => {
         <header>
             <Nav />
             <section className="textos-header">
-                <h1>ENERGYT</h1>
-                <h2>Energía y Tecnología S.A.S</h2>
+                <h1>ENERGYT <span>S.A.S</span></h1>
             </section>
             <div className="wave">
                 <svg viewBox="0 0 500 150" preserveAspectRatio="none" style={{height: '100%', width: '100%'}}>

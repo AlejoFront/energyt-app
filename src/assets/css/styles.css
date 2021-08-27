@@ -73,6 +73,9 @@ header .textos-header h1 {
   font-size: 50px;
   color: #FFF;
 }
+header .textos-header h1 span {
+  font-size: 30px;
+}
 header .textos-header h2 {
   font-size: 30px;
   font-weight: 300;
@@ -191,6 +194,96 @@ header .wave {
 .nuestros-clientes .galeria-clientes .imagen-port .hover-galeria p {
   color: #FFF;
   text-align: center;
+}
+
+@media screen and (max-width: 414px) {
+  .acerca-de .contenedor-acerca-de {
+    flex-direction: column;
+  }
+  .acerca-de .contenedor-acerca-de .contenido-textos {
+    width: 95%;
+  }
+  .acerca-de .contenedor-acerca-de .imagen-about-us {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  .nuestros-clientes .galeria-clientes .imagen-port {
+    width: 70%;
+  }
+}
+.show {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.404);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+.show:target {
+  transform: scale(1);
+}
+.show .show__container {
+  margin: auto;
+  width: 90%;
+  height: 70%;
+  position: relative;
+  background-color: #FFFFFF;
+  background-image: url(../img/clientes/logo-sanatorio-agua-dios.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+.show .show__container .show__close {
+  background: crimson;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  right: -20px;
+  border-radius: 50%;
+}
+.show .show--n1 {
+  background-image: url(../img/clientes/logo-sanatorio-agua-dios.svg);
+}
+.show .show--n2 {
+  background-image: url(../img/clientes/ComfatolimaLogo.jpg);
+}
+.show .show--n3 {
+  background-image: url(../img/clientes/comfenalco.jpg);
+}
+.show .show--n4 {
+  background-image: url(../img/clientes/gobernacionTolima.png);
+}
+.show .show--n5 {
+  background-image: url(../img/clientes/hospitalSanFranciscoVilladeLeyva.jpeg);
+}
+.show .show--n6 {
+  background-image: url(../img/clientes/corTolima.png);
+}
+.show .show--n7 {
+  background-image: url(../img/clientes/enertolima.png);
+}
+.show .show--n8 {
+  background-image: url(../img/clientes/universidad_del_tolima.png);
+}
+.show .show--n9 {
+  background-image: url(../img/clientes/HospitalSanRafael.png);
+}
+.show .show--n10 {
+  background-image: url(../img/clientes/viva.png);
 }
 
 footer {
