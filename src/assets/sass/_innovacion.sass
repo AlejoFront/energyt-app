@@ -1,0 +1,100 @@
+.title__section
+    color: $verde
+    width: 100%
+    text-align: center
+    padding: 60px 30px
+.section__innova
+    width: 100%
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+.section__uno
+    //background-image: url(../img/portada01.jpg)
+    background: $gris
+    height: 100vh
+    nav
+        text-align: right
+        padding: 30px 50px 0 0
+        > a
+            color: $negro
+            font-weight: 300
+            font-size: 18px
+            text-decoration: none
+            margin-right: 10px
+            &.active
+                color: $blanco
+            &:hover
+                text-decoration: underline
+    h1
+        text-align: center
+        margin-top: 5%
+        text-transform: uppercase
+        color: $verde
+    .cont__innnovacion
+        width: 90%
+        margin: auto
+        margin-top: 5%
+        display: flex
+        gap: 20px
+        figure
+            width: 50%
+            img
+                width: 80%
+        .description
+            margin: auto
+            padding: 20px
+            width: 50%
+            text-align: justify
+            p
+                font-size: 20px
+            
+
+.section__dos
+    background: rgb(242,242,242)
+    background: linear-gradient(180deg, rgba(242,242,242,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%)
+    min-height:100vh
+    .galeria_innova
+        width: 95%
+        margin: auto
+        padding: 20px
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-evenly
+        gap: 10px
+        .galeria__innova__item
+            width: calc( 100% / 3 - 10px )
+            position: relative
+            .galeria__img
+                width: 100%
+                height: 100%
+                object-fit: cover
+            .galeria__title
+                position: absolute
+                bottom: 0
+                color: $blanco
+                background: linear-gradient(rgba(255, 255, 255, 0),rgba(0, 0, 0, 1))
+                width: 100%
+                margin: 0
+                padding: 10px
+
+@media (max-width: 768px)
+    .galeria_innova
+        gap: 20px
+        .galeria__innova__item
+            width: calc( 100% / 2 - 10px ) !important
+
+@media (max-width: 414px)
+    .galeria_innova
+        .galeria__innova__item
+            width: calc( 100% / 1 - 10px ) !important 
+
+@media (max-width: 411px)
+    .galeria_innova
+        .galeria__innova__item
+            width: calc( 100% / 1 - 10px ) !important    
+
+@media (max-width: 360px)
+    .galeria_innova
+        flex-direction: column
+        .galeria__innova__item
+            width: 100% !important

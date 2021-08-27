@@ -1,6 +1,7 @@
 import {createStore, combineReducers,applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import FooterReducer from '../reducer/FooterReducer';
+import { InnovacionReducer } from '../reducer/InnovacionReducer';
 import {QueHacemosReducer, ProjectsReducer} from '../reducer/QueHacemosReducer';
 import { EstadosFinancierosReducer, MisionReducer, PoliticasReducer, ProteccionDatosReducer, VisionReducer } from '../reducer/SobreNosotrosReducer';
 
@@ -14,7 +15,8 @@ const reducer = combineReducers({
     projects: ProjectsReducer,
     politicas: PoliticasReducer,
     estadosFinancieros: EstadosFinancierosReducer,
-    proteccionDatos: ProteccionDatosReducer
+    proteccionDatos: ProteccionDatosReducer,
+    innovacion: InnovacionReducer
 })
 
 export const store = createStore(

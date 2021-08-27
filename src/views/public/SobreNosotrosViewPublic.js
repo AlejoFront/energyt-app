@@ -37,7 +37,7 @@ const SobreNosotrosViewPublic = () => {
                     </div>
                 </div>
             </section>
-            <section class="politicas">
+            <section className="politicas">
             <div className="contenedor">
                 <h2 className="titulo">Politicas</h2>
                 {
@@ -53,9 +53,9 @@ const SobreNosotrosViewPublic = () => {
             </div>
         </section>
         
-        <section class="estados__financieros">
-            <div class="contenedor">
-                <h2 class="titulo">Estados Financieros</h2>
+        <section className="estados__financieros">
+            <div className="contenedor">
+                <h2 className="titulo">Estados Financieros</h2>
                 {
                     estadosFinancieros?.map((estado, index) => (
                         <EstadosFinancieros
@@ -67,12 +67,12 @@ const SobreNosotrosViewPublic = () => {
                 }
             </div>
         </section>
-        <section class="proteccion_datos">
-            <div class="contenedor">
-                <h2 class="titulo">Protección de datos</h2>
-                <div class="contenido">
+        <section className="proteccion_datos">
+            <div className="contenedor">
+                <h2 className="titulo">Protección de datos</h2>
+                <div className="contenido">
                     <img src={ICON__PROTECCION_DATOS} alt="Icono" />
-                    <div class="cont">
+                    <div className="cont">
                         <p> {proteccionDatos.descripcion} </p>
                         <a href={proteccionDatos.link} target='_blank' rel="noreferrer">Documento</a>
                     </div>

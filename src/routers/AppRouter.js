@@ -12,6 +12,8 @@ import { getEstadosFinancieros, getMision, getPoliticas, getProteccionDatos, get
 import { startLoadeEstadosFinancieros, startLoadMision, startLoadPoliticas, startLoadProteccion, startLoadVision } from '../reducer/SobreNosotrosReducer'
 import { getProyectos, getQueHacemos } from '../helpers/QueHacemosHelpers'
 import { startLoadProjects, startLoadQueHacemos } from '../reducer/QueHacemosReducer'
+import { getInnovacion } from '../helpers/InnovacionHelpers'
+import { startLoadInnovacion } from '../reducer/InnovacionReducer'
 
 const AppRouter = () => {
     const dispatch = useDispatch()
@@ -45,6 +47,9 @@ const AppRouter = () => {
         .catch(e => console.log(e));
         getProteccionDatos()
         .then(response => dispatch(startLoadProteccion(response)))
+        .catch(e => console.log(e));
+        getInnovacion()
+        .then(response => dispatch(startLoadInnovacion(response)))
         .catch(e => console.log(e));
         return () => {}
     }, [dispatch])
