@@ -1,0 +1,32 @@
+.projects
+    background: rgb(242,242,242)
+    background: linear-gradient(180deg, rgba(242,242,242,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%)
+    .contenedor-projects
+        display: flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        gap: 20px
+        .project__item
+            display: flex
+            flex-direction: column
+            gap: 10px
+            width: 40%
+            figure
+                img
+                    width: 100%
+            .project_title
+                text-align: center
+                margin: 5% 0
+            .project__paragraph
+                text-align: justify
+            button
+                width: 60%
+                margin: auto
+
+@media screen and (max-width:600px)
+    .projects
+        .contenedor-projects
+            flex-direction: column
+            .project__item
+                width: 100%
+                margin-bottom: 10%

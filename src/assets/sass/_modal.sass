@@ -1,0 +1,83 @@
+:root
+    --clip: circle(0 at top right)
+    --show: scale(0)
+    --transitionModal: .5s transform
+    --transitionBackground: 1s .5s clip-path
+    
+.modal
+    z-index: 10
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.76)
+    display: flex
+    clip-path: var(--clip)
+    transition: var(--transitionBackground)
+    &:target
+        --clip: circle(150% at top right)
+        --show: scale(1)
+        --transitionModal: .5s 1s transform
+        --transitionBackground: 1s clip-path
+    .modal__container
+        margin: auto
+        background: #fff
+        width: 90%
+        max-width: 1200px
+        min-height: 70%
+        display: grid
+        grid-template-columns: 4fr repeat(7,1fr)
+        grid-template-rows: repeat(4,1fr)
+        position: relative
+        transform: var(--show)
+        transition: var(--transitionModal)
+        .modal__close
+            position: absolute
+            background: crimson
+            color: #fff
+            width: 30px
+            height: 30px
+            display: block
+            cursor: pointer
+            text-align: center
+            line-height: 30px
+            text-decoration: none
+            top: 0
+            right: 0
+            font-family: sans-serif
+            font-weight: bold
+        .modal__img
+            grid-row: 1/-1
+            grid-column: 1/4
+            width: 90%
+            place-self: center
+        .modal__texts
+            grid-row: 2/-2
+            grid-column: 4/-2
+            place-self: center
+            display: grid
+            gap: 20px
+            justify-items: start
+            text-align: center
+            .modal__title
+                font-size: 2rem
+                text-align: center
+            .modal__paragraph
+                padding: 10px
+                font-size: 1rem
+                text-align: justify
+                
+@media screen and (max-width:900px)
+    .modal
+        .modal__container
+            grid-template-columns: 1fr
+            grid-template-rows: 1fr 1fr
+            grid-template-areas: "img" "texto"
+            .modal__img
+                margin-top: 10%
+                grid-area: img
+            .modal__texts
+                grid-area: texto
+                .modal__title
+                    text-align: center

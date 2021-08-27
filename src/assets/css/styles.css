@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -33,6 +34,11 @@
 .btn-info {
   color: #FFFFFF;
   background: #17408b;
+}
+
+.active {
+  background: #14740f;
+  padding: 10px;
 }
 
 header {
@@ -286,6 +292,454 @@ header .wave {
   background-image: url(../img/clientes/viva.png);
 }
 
+:root {
+  --clip: circle(0 at top right);
+  --show: scale(0);
+  --transitionModal: .5s transform;
+  --transitionBackground: 1s .5s clip-path;
+}
+
+.modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.76);
+  display: flex;
+  clip-path: var(--clip);
+  transition: var(--transitionBackground);
+}
+.modal:target {
+  --clip: circle(150% at top right);
+  --show: scale(1);
+  --transitionModal: .5s 1s transform;
+  --transitionBackground: 1s clip-path;
+}
+.modal .modal__container {
+  margin: auto;
+  background: #fff;
+  width: 90%;
+  max-width: 1200px;
+  min-height: 70%;
+  display: grid;
+  grid-template-columns: 4fr repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  position: relative;
+  transform: var(--show);
+  transition: var(--transitionModal);
+}
+.modal .modal__container .modal__close {
+  position: absolute;
+  background: crimson;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  top: 0;
+  right: 0;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.modal .modal__container .modal__img {
+  grid-row: 1/-1;
+  grid-column: 1/4;
+  width: 90%;
+  place-self: center;
+}
+.modal .modal__container .modal__texts {
+  grid-row: 2/-2;
+  grid-column: 4/-2;
+  place-self: center;
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  text-align: center;
+}
+.modal .modal__container .modal__texts .modal__title {
+  font-size: 2rem;
+  text-align: center;
+}
+.modal .modal__container .modal__texts .modal__paragraph {
+  padding: 10px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+@media screen and (max-width: 900px) {
+  .modal .modal__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "img" "texto";
+  }
+  .modal .modal__container .modal__img {
+    margin-top: 10%;
+    grid-area: img;
+  }
+  .modal .modal__container .modal__texts {
+    grid-area: texto;
+  }
+  .modal .modal__container .modal__texts .modal__title {
+    text-align: center;
+  }
+}
+.sobre-nosotros {
+  background: #FFFFFF;
+}
+.sobre-nosotros > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo titulo" "mision vision" "valores__corporativos valores__corporativos";
+  grid-gap: 10px;
+}
+.sobre-nosotros > .contenedor > .titulo {
+  grid-area: titulo;
+}
+.sobre-nosotros > .contenedor .mision {
+  grid-area: mision;
+}
+.sobre-nosotros > .contenedor .vision {
+  grid-area: vision;
+}
+.sobre-nosotros > .contenedor .subtitulo {
+  color: #14740f;
+  text-align: center;
+}
+.sobre-nosotros > .contenedor p {
+  width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  text-align: justify;
+  padding: 10px;
+}
+.sobre-nosotros > .contenedor .valores__corporativos {
+  grid-area: valores__corporativos;
+  display: grid;
+  grid-template-areas: "titulo titulo" "imagen texto";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 4fr;
+  grid-gap: 10px;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .subtitulo {
+  grid-area: titulo;
+  margin-bottom: 5%;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .img {
+  position: relative;
+  grid-area: imagen;
+  display: flex;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .img .img__item {
+  position: absolute;
+  top: 0;
+  background-image: url(../img/valores_corporativos/Honestidad.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  animation: img_valores 180s linear alternate 15s infinite;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto {
+  grid-area: texto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto h4 {
+  color: #14740f;
+  text-align: center;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto h4::after {
+  content: " Honestidad";
+  animation: key_valores 180s alternate 15s infinite;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto p::after {
+  content: " Los corazones honestos, producen acciones honestas.";
+  animation: key_valores_text 180s alternate 15s infinite;
+}
+
+.politicas > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo titulo" "politica__calidad politica__seguridad";
+  grid-gap: 10px;
+}
+.politicas > .contenedor > .titulo {
+  grid-area: titulo;
+}
+.politicas > .contenedor .politica__calidad {
+  grid-area: politica__calidad;
+}
+.politicas > .contenedor .politica__seguridad {
+  grid-area: politica__seguridad;
+}
+.politicas > .contenedor .subtitulo {
+  text-align: center;
+  color: #14740f;
+}
+.politicas > .contenedor p {
+  width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  text-align: justify;
+  padding: 10px;
+}
+
+.estados__financieros {
+  background: #F2F2F2;
+}
+.estados__financieros > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo titulo titulo titulo" "card1 card2 card3 card4" ". estado__comparativo estado__comparativo .";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+.estados__financieros > .contenedor > .titulo {
+  grid-area: titulo;
+}
+.estados__financieros > .contenedor .estado__item {
+  background: #FFFFFF;
+  border: 1px solid #D3D3D3;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.estados__financieros > .contenedor .estado__item a {
+  padding: 5px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.estados__financieros > .contenedor .estado__item a img {
+  width: 50%;
+  margin: auto;
+}
+.estados__financieros > .contenedor .estado__item a span {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #14740f;
+}
+.estados__financieros > .contenedor .card1 {
+  grid-area: card1;
+}
+.estados__financieros > .contenedor .card2 {
+  grid-area: card2;
+}
+.estados__financieros > .contenedor .card3 {
+  grid-area: card3;
+}
+.estados__financieros > .contenedor .card4 {
+  grid-area: card4;
+}
+
+.proteccion_datos > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo" "contenido";
+}
+.proteccion_datos > .contenedor .titulo {
+  grid-area: titulo;
+}
+.proteccion_datos > .contenedor .contenido {
+  display: grid;
+  grid-template-areas: "img content";
+  grid-template-columns: 1fr 4fr;
+  grid-area: contenido;
+  align-items: center;
+}
+.proteccion_datos > .contenedor .contenido img {
+  grid-area: img;
+  width: 100%;
+}
+.proteccion_datos > .contenedor .contenido .cont {
+  grid-area: content;
+}
+.proteccion_datos > .contenedor .contenido .cont p {
+  text-align: justify;
+  font-size: 20px;
+}
+.proteccion_datos > .contenedor .contenido .cont a {
+  text-decoration: underline;
+  color: #14740f;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 414px) {
+  .sobre-nosotros > .contenedor {
+    grid-template-areas: "titulo" "mision" "vision" "valores__corporativos";
+  }
+  .sobre-nosotros > .contenedor .valores__corporativos {
+    grid-template-areas: "titulo titulo" "imagen imagen" "texto texto";
+  }
+  .sobre-nosotros > .contenedor .valores__corporativos .subtitulo {
+    text-align: center;
+  }
+
+  .politicas > .contenedor {
+    grid-template-areas: "titulo" "politica__calidad" "politica__seguridad";
+  }
+
+  .estados__financieros > .contenedor {
+    display: grid;
+    grid-template-areas: "titulo" "card1" "card2" "card3" "card4";
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px repeat(4, 1fr);
+  }
+
+  .proteccion_datos > .contenedor .contenido {
+    grid-template-areas: "img" "content";
+    grid-template-columns: 1fr;
+  }
+  .proteccion_datos > .contenedor .contenido img {
+    width: 50%;
+    margin: auto;
+  }
+}
+.que__hacemos {
+  background: #FFFFFF;
+}
+.que__hacemos .card__copy {
+  margin-top: 20px;
+}
+.que__hacemos .card__container {
+  width: 99%;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  grid-template-areas: ".          card1            ." "card2      card1        card3" "card2      card4        card3" ".          card4            ." "card5      card6        card7" "card5      card6        card7" ".          card8            ." "card9      card8       card10" "card9        .         card10";
+}
+.que__hacemos .card__container .card__item {
+  padding: 20px;
+  background: #FFFFFF;
+  border-top: 5px solid #14740f;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.que__hacemos .card__container .card__item .card__img {
+  background: #14740f;
+  margin-top: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.que__hacemos .card__container .card__item .card__title {
+  margin: 20px 0;
+  text-align: center;
+}
+.que__hacemos .card__container .card__item .card__paragraph {
+  text-align: justify;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.que__hacemos .card__container .card__item:first-of-type {
+  grid-area: card1;
+}
+.que__hacemos .card__container .card__item:nth-of-type(2) {
+  grid-area: card2;
+}
+.que__hacemos .card__container .card__item:nth-of-type(3) {
+  grid-area: card3;
+}
+.que__hacemos .card__container .card__item:nth-of-type(4) {
+  grid-area: card4;
+}
+.que__hacemos .card__container .card__item:nth-of-type(5) {
+  grid-area: card5;
+}
+.que__hacemos .card__container .card__item:nth-of-type(6) {
+  grid-area: card6;
+}
+.que__hacemos .card__container .card__item:nth-of-type(7) {
+  grid-area: card7;
+}
+.que__hacemos .card__container .card__item:nth-of-type(8) {
+  grid-area: card8;
+}
+.que__hacemos .card__container .card__item:nth-of-type(9) {
+  grid-area: card9;
+}
+.que__hacemos .card__container .card__item:last-of-type {
+  grid-area: card10;
+}
+
+@media screen and (max-width: 900px) {
+  .que__hacemos .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8" "card9 card10";
+  }
+}
+@media screen and (max-width: 750px) {
+  .que__hacemos .card__container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "card1" "card2" "card3" "card4" "card5" "card6" "card7" "card8" "card9" "card10";
+  }
+}
+@media screen and (max-width: 414px) {
+  .que__hacemos .card__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 2fr);
+    grid-template-areas: "card1" "card2" "card3" "card4" "card5" "card6" "card7" "card8" "card9" "card10";
+  }
+}
+.projects {
+  background: #f2f2f2;
+  background: linear-gradient(180deg, #f2f2f2 0%, white 100%, white 100%);
+}
+.projects .contenedor-projects {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.projects .contenedor-projects .project__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+}
+.projects .contenedor-projects .project__item figure img {
+  width: 100%;
+}
+.projects .contenedor-projects .project__item .project_title {
+  text-align: center;
+  margin: 5% 0;
+}
+.projects .contenedor-projects .project__item .project__paragraph {
+  text-align: justify;
+}
+.projects .contenedor-projects .project__item button {
+  width: 60%;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .projects .contenedor-projects {
+    flex-direction: column;
+  }
+  .projects .contenedor-projects .project__item {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+}
 footer {
   background: #cecedd;
   padding: 160px 0 50px;
@@ -321,9 +775,6 @@ footer .contenedor-footer .content-foo h4 {
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
-footer .contenedor-footer .content-foo .p-email::after {
-  content: " info@energyt.co";
-}
 footer .footer__social {
   display: flex;
   justify-content: center;
@@ -357,6 +808,121 @@ footer .titulo-final {
   font-size: 24px;
   margin: 20px 0 0 0;
   color: #14740f;
+}
+
+@keyframes key_valores {
+  0% {
+    content: " Honestidad";
+  }
+  9% {
+    content: " Fe";
+  }
+  18% {
+    content: " Paciencia";
+  }
+  27% {
+    content: " Respeto";
+  }
+  36% {
+    content: " Alegria";
+  }
+  45% {
+    content: " Amabilidad";
+  }
+  54% {
+    content: " Amor";
+  }
+  63% {
+    content: " Dominio Propio";
+  }
+  72% {
+    content: " Felicidad";
+  }
+  81% {
+    content: " Paz";
+  }
+  90% {
+    content: " Bondad";
+  }
+  100% {
+    content: " Tolerancia";
+  }
+}
+@keyframes key_valores_text {
+  0% {
+    content: " Los corazones honestos, producen acciones honestas.";
+  }
+  9% {
+    content: " Pero que pida con fe, sin dudar, porque quien duda es como las olas del mar agitadas y llevadas de un lado a otro por el viento. (Lucas 8:16)";
+  }
+  18% {
+    content: ' La paciencia no es simplemente la capacidad de esperar. es cómo nos comportamos mientras esperamos "Joyce Meyer"';
+  }
+  27% {
+    content: " El respeto por los otros es la primera condición para sobre vivir. Por eso ser brillante no es una gran hazaña si no existe el respeto";
+  }
+  36% {
+    content: ' Cuán bueno hace al hombre la dicha! parece que uno quisiera dar su corazón. su alegria. ¡Y la alegria es contagiosa! "Dostoievski"';
+  }
+  45% {
+    content: " Panal de miel son las palabras amables: endulzan la vida y dan salud al cuerpo. (Prove. 16:24)";
+  }
+  54% {
+    content: " El amor no es celoso. no busca sus propios intereses. no se siente provocado. no lleva cuenta del año. No se regocija por la injusticia. si no que se regocija con la verdad (Cor 13:4-8)";
+  }
+  63% {
+    content: ' La verdad libertad consiste en el dominio absoluto de si mismo. "Michael Eyquen"';
+  }
+  72% {
+    content: ' La felicidad generalmente no se logra con grandes golpes de suerte. que pueden ocurrir pocas veces. sino con pequeñas cosas que ocurren todos los dias. "Benjamin Franklin".';
+  }
+  81% {
+    content: " Mientras mas paz albergues en ti. mayor sera tu fortaleza. apártate del mal y haz el bien. busca la paz y siguela. (Salmo 34:14)";
+  }
+  90% {
+    content: ' Nadie puede hacer el bien en un espacio de su vida. mientras hace daño en otro. La vida es un todo invisible "Mahatma Gandhi"';
+  }
+  100% {
+    content: ' Puesto que yo soy imperfecto y necesito la tolerancia y la banda de los demás. tambien he de tolerar los defectos del mundo hasta que pueda encontrar el secreto que me permita ponerles remedio. "Mahatma Gandhi"';
+  }
+}
+@keyframes img_valores {
+  0% {
+    background-image: url(../img/valores_corporativos/Honestidad.jpg);
+  }
+  9% {
+    background-image: url(../img/valores_corporativos/fe.jpg);
+  }
+  18% {
+    background-image: url(../img/valores_corporativos/paciencia.png);
+  }
+  27% {
+    background-image: url(../img/valores_corporativos/respeto.png);
+  }
+  36% {
+    background-image: url(../img/valores_corporativos/alegria.jpg);
+  }
+  45% {
+    background-image: url(../img/valores_corporativos/amabilidad.png);
+  }
+  54% {
+    background-image: url(../img/valores_corporativos/amor.jpg);
+  }
+  63% {
+    background-image: url(../img/valores_corporativos/dominioPropio.png);
+  }
+  72% {
+    background-image: url(../img/valores_corporativos/felicidad.png);
+  }
+  81% {
+    background-image: url(../img/valores_corporativos/paz.png);
+  }
+  90% {
+    background-image: url(../img/valores_corporativos/bondad.png);
+  }
+  100% {
+    background-image: url(../img/valores_corporativos/tolerancia.png);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
