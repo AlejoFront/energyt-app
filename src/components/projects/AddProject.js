@@ -45,11 +45,13 @@ const AddProject = () => {
             </div>
             <div className='form_add_group'>
                 <label>Descripción Corta</label>
-                <textarea name='desctipcion_c' value={desctipcion_c} onChange={handleInputChange} />
+                <textarea name='desctipcion_c' value={desctipcion_c} onChange={handleInputChange} maxLength='250'/>
+                <span>caracteres {desctipcion_c.length} de 250</span>
             </div>
             <div className='form_add_group'>
                 <label>Descripción Larga</label>
-                <textarea name='descripcion_l' value={descripcion_l} onChange={handleInputChange} />
+                <textarea name='descripcion_l' value={descripcion_l} onChange={handleInputChange} maxLength='900' />
+                <span>caracteres {descripcion_l.length} de 900</span>
             </div>
             <div className='form_btn_group'>
                 {

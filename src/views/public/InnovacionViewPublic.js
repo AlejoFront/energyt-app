@@ -20,11 +20,11 @@ const InnnovacionViewPublic = () => {
                         </div>
                     </div>
                 </section>
-                <section class="title__section">
+                <section className="title__section">
                     <h2>Galeria {innovacion.title}</h2>
                 </section>
-                <section class="section__innova section__dos">
-                    <div class="galeria_innova">
+                <section className="section__innova section__dos">
+                    <div className="galeria_innova">
                         {
                             galeria?.map((gal, index) => (
                                 <InnovacionItem

@@ -7,6 +7,46 @@ export const getQueHacemos = async () => {
     return queHacemos
 }
 
+export const addQueHacemos = async (descripcion,nombre) => {
+    return await db.collection('queHacemos').add({
+        descripcion: descripcion,
+        icono: null,
+        nombre: nombre
+    })
+}
+
+const selectedImgQueHacemos = async (image, nameFile) => {
+    if(image.type === undefined){
+        console.log('Error')
+        return
+    }
+    if (image.type === 'image/jpeg' || image.type === 'image/png') {
+        try {
+            const imageRef = await storage.ref().child('queHacemos').child(nameFile)
+            await imageRef.put(image)
+            const imageURL = await imageRef.getDownloadURL();
+            return imageURL
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+export const updateQueHacemos = async (id, icon,nombre, descripcion) => {
+    console.log(id, icon,nombre, descripcion)
+    let urlImg = null;
+    if (typeof(icon) === 'object' && icon !== null) {
+        urlImg = await selectedImgQueHacemos(icon,nombre)
+    }else{
+        urlImg = icon;
+    }
+    return await db.collection('queHacemos').doc(id).update({
+        descripcion: descripcion,
+        nombre: nombre,
+        icono: urlImg
+    })
+}
+
 export const getProyectos = async () => {
     const proyectos = []
     const data = await db.collection('proyectos').get()

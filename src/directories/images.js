@@ -6,6 +6,7 @@ import icon_sublogo from '../assets/img/clientes/Team meeting_Monochromatic.svg'
 import icon_estados_financieros from '../assets/img/estadofinanciero/bxs-bar-chart-alt-2.svg'
 import icon_proteccion_datos from '../assets/img/protecciondatos/bx-lock.svg'
 import icon_upload from '../assets/img/icons/bx-cloud-upload.svg'
+import icon_que_hacemos from '../assets/img/icons/bxs-grid-alt.svg'
 
 export const ICON__FACEBBOK = icon_facebook
 export const ICON__INSTAGRAM = icon_instagram
@@ -19,3 +20,5 @@ export const ICON__ESTADOS_FINANCIEROS = icon_estados_financieros
 export const ICON__PROTECCION_DATOS = icon_proteccion_datos
 
 export const ICON_UPLOAD = icon_upload
+
+export const ICON_QUE_HACEMOS = icon_que_hacemos
