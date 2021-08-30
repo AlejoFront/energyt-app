@@ -13,7 +13,7 @@ const PrincipalViewPublic = () => {
                 <div className="contenedor-acerca-de">
                     <img src={ICON__LOGO} alt="" className="imagen-about-us" />
                     <div className="contenido-textos">
-                        <p> <b>ENERGYT <span>S.A.S</span></b>
+                        <p> <b>ENERGYT <span>S.A.S </span></b>
                             es hoy una empresa prestadora de servicios, 
                             especializada en el desarrollo de grandes proyectos de redes eléctricas, 
                             creada el 2 de Marzo del 2016 bajo la necesidad de abastecer y 

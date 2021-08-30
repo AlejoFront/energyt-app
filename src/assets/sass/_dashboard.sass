@@ -1,16 +1,225 @@
-.dasboard_conteiner
-    background: $gris
-    min-height: 100vh
+.container-dashboard
     display: grid
-    gap: 10px
-    grid-template-areas: "barra_lateral barra_superior" "barra_lateral dashboard_main"
-    grid-template-columns: 1fr 7fr
-    grid-template-rows: 1fr 10fr
-    div, main
-        background: green
-    .header__dashboard
-        grid-area: barra_lateral
-    .bar__dashboard
-        grid-area: barra_superior
-    .main__dashboard
-        grid-area: dashboard_main
+    width: 100vw
+    max-width: 100vw
+    min-height: 100vh
+    grid-template-areas: "header main main" "header contenido contenido" "header contenido contenido"
+    grid-template-columns: 2fr 6fr 3fr
+    grid-template-rows: 1fr 11fr
+    grid-row-gap: 10px
+    .dashboard-header
+        grid-area: header
+        background: $verde
+    main
+        grid-area: main
+        background: #FFFFFF
+        box-shadow: 0px 3px 5px 0px $gris-shadow
+    .content-dashboard
+        grid-area: contenido
+        .dashboard-container
+            background: #FFFFFF
+            box-shadow: 0px 1px 5px 0px $gris-shadow
+            width: 97%
+            margin: auto
+            margin-top: 1%
+            overflow-y: auto
+            height: 86vh
+            .dashboard__cont
+                width: 70%
+                margin: auto
+                margin-top: 5%
+                display: flex
+                flex-direction: column
+                .controls
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-evenly
+                    margin-bottom: 5%
+                    h2
+                        margin-top: 2%
+                    .controls-button
+                        display: flex
+                        justify-content: space-evenly
+                        margin-top: 2%
+                    textarea
+                        text-align: left
+                        font-size: 15px
+                        padding: 10px
+                        max-width: 100%
+                        max-height: 100px
+                        min-width: 100%
+                        min-height: 100px
+                    article
+                        width: 100%
+                        text-align: justify
+                .form_control
+                    display: flex
+                    justify-content: space-evenly
+                    flex-wrap: wrap
+                    .form__group
+                        width: 45%
+                        display: flex
+                        flex-direction: column
+                        margin-bottom: 2%
+                        label
+                            font-size: 18px
+                        input
+                            padding: 5px
+                        &:nth-of-type(8)                            
+                            width: 80%
+                    .controls-button
+                        width: 100%
+                        display: flex
+                        justify-content: center
+                        button
+                            margin: 0 5%
+                .controls
+                    .control_Proteccion
+                        display: flex
+                        flex-direction: column
+                        .proteccion_group
+                            display: flex
+                            flex-direction: column
+                            margin-bottom: 5%
+                            label
+                                font-size: 18px
+                                margin-bottom: 1%
+                            input
+                                padding: 5px
+                                font-size: 15px
+                            textarea
+                                text-align: justify
+                                padding: 10px 20px
+                                min-height: 180px
+                                max-height: 180px
+                                max-width: 100%
+                                min-width: 100%
+                    .btn_control
+                        width: 100%
+                        display: flex
+                        justify-content: center
+                        button
+                            margin: 0 5%
+
+                    .estados_cont
+                        display: flex
+                        flex-direction: column
+                        .estados_group
+                            width: 60%
+                            margin: 1% auto
+                            display: flex
+                            flex-direction: column
+                            label
+                                font-size: 18px
+                                margin-bottom: 1%
+                            input
+                                padding: 5px
+                    .estados__grid
+                        margin-top: 5%
+                        display: flex
+                        justify-content: space-evenly
+                        flex-wrap: wrap
+                        gap: 10px
+                        .item_estado
+                            width: 30%
+                            display: flex
+                            flex-direction: column
+                            background: $blanco
+                            border: 1px solid #D3D3D3
+                            box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75)
+                            -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75)
+                            -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75)
+                            a
+                                padding: 5px
+                                text-decoration: none
+                                display: flex
+                                flex-direction: column
+                                img
+                                    width: 50%
+                                    margin: auto
+                                span
+                                    font-size: 20px
+                                    font-weight: bold
+                                    text-align: center
+                                    color: $verde
+                            button
+                                width: 50%
+                                margin: 5% auto
+                            .edit_estado
+                                margin-top: 15%
+                                display: flex
+                                flex-direction: column
+                                div
+                                    display: flex
+                                    flex-direction: column
+                                    width: 95%
+                                    margin: auto
+                                    margin-bottom: 4%
+                                    input
+                                        padding: 5px
+                            .edit__estados_F
+                                width: 100%
+                                display: flex
+                                flex-direction: column
+                                justify-content: center
+                                margin: auto
+                                margin-bottom: 5%
+                                div
+                                    margin: auto
+                            &:first-of-type
+                                grid-area: estado1
+                            &:nth-of-type(2)
+                                grid-area: estado2
+                            &:nth-of-type(3)
+                                grid-area: estado3
+                            &:last-of-type
+                                grid-area: estado4
+                                
+                                
+                //     
+                // hr
+                //     border: 1px solid #D3D3D3
+    .dashboard-header
+        display: flex
+        flex-direction: column
+        .logo
+            background: $blanco
+            width: 50%
+            margin: auto
+            margin-top: 10%
+            margin-bottom: 5%
+            img
+                width: 100%
+
+        ul
+            background: $verde-transparencia
+            display: flex
+            flex-direction: column
+            li
+                list-style: none
+                display: block
+                cursor: pointer
+                a
+                    display: block
+                    padding: 20px
+                    font-weight: lighter
+                    letter-spacing: 2px
+                    color: #FFFFFF
+                    text-decoration: none
+                    &:hover
+                        cursor: pointer
+                        background: $colorActive
+                        
+                    &.active
+                        background: $colorActive
+                        color: $blanco
+    main
+        display: flex
+        .main
+            width: 90%
+            margin: auto
+            display: flex
+            align-items: center
+            justify-content: space-between
+            h3
+                color: $verde

@@ -1,17 +1,36 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { ICON__LOGO } from '../../directories/images'
 
 const Dashboard = ({children}) => {
     return (
-        <div className='dasboard_conteiner'>
-            <div className='header__dashboard'>
-                menu
+        <div className='container-dashboard'>
+            <div className='dashboard-header'>
+                <figure className='logo'>
+                    <img src={ICON__LOGO} alt='logo' />
+                </figure>
+                <ul>
+                    <li><NavLink exact to='/mision-vision'>Misión / Visión</NavLink></li>
+                    <li><NavLink exact to='/que-hacemos'>Que Hacemos</NavLink></li>
+                    <li><NavLink exact to='/politicas'>Politicas</NavLink></li>
+                    <li><NavLink exact to='/proyectos'>Proyectos</NavLink></li>
+                    <li><NavLink exact to='/estados-financieros'>Estados Financieros</NavLink></li>
+                    <li><NavLink exact to='/proteccion-de-datos'>Proteccion de datos</NavLink></li>
+                    <li><NavLink exact to='/innovacion'>Innovación</NavLink></li>
+                    <li><NavLink exact to='/footer'>Footer</NavLink></li>
+                </ul>
             </div>
-            <div className='bar__dashboard'>
-                barra superior
-            </div>
-            <main className='main__dashboard'>
-                {children}
+            <main>
+                <div className='main'>
+                    <h3> Bienvenido </h3>
+                    <button className='btn_danger' type='button'>Salir</button>
+                </div>
             </main>
+            <div className='content-dashboard'>
+                <div className='dashboard-container'>
+                    {children}
+                </div>
+            </div>
         </div>
     )
 }

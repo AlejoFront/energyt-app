@@ -41,6 +41,48 @@
   padding: 10px;
 }
 
+.btn_info {
+  cursor: pointer;
+  padding: 5px;
+  width: 15%;
+  background: none;
+  border: 1px solid #17408b;
+  font-size: 18px;
+  transition: 0.5s ease all;
+}
+.btn_info:hover {
+  background: #17408b;
+  color: #FFFFFF;
+}
+
+.btn_danger {
+  cursor: pointer;
+  padding: 5px;
+  width: 15%;
+  background: none;
+  border: 1px solid #ff0000ad;
+  font-size: 18px;
+  transition: 0.5s ease all;
+}
+.btn_danger:hover {
+  background: #ff0000ad;
+  color: #FFFFFF;
+}
+
+.btn_success {
+  cursor: pointer;
+  padding: 5px;
+  width: 15%;
+  background: none;
+  border: 1px solid #14740f;
+  font-size: 18px;
+  transition: 0.5s ease all;
+}
+.btn_success:hover {
+  background: #14740f;
+  color: #FFFFFF;
+}
+
 header {
   width: 100%;
   height: 100vh;
@@ -1047,26 +1089,276 @@ footer .titulo-final {
     background-image: url(../img/valores_corporativos/tolerancia.png);
   }
 }
-.dasboard_conteiner {
-  background: #F2F2F2;
-  min-height: 100vh;
+.container-dashboard {
   display: grid;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  grid-template-areas: "header main main" "header contenido contenido" "header contenido contenido";
+  grid-template-columns: 2fr 6fr 3fr;
+  grid-template-rows: 1fr 11fr;
+  grid-row-gap: 10px;
+}
+.container-dashboard .dashboard-header {
+  grid-area: header;
+  background: #14740f;
+}
+.container-dashboard main {
+  grid-area: main;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 5px 0px #a8a6a6;
+}
+.container-dashboard .content-dashboard {
+  grid-area: contenido;
+}
+.container-dashboard .content-dashboard .dashboard-container {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 5px 0px #a8a6a6;
+  width: 97%;
+  margin: auto;
+  margin-top: 1%;
+  overflow-y: auto;
+  height: 86vh;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont {
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 5%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls h2 {
+  margin-top: 2%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .controls-button {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls textarea {
+  text-align: left;
+  font-size: 15px;
+  padding: 10px;
+  max-width: 100%;
+  max-height: 100px;
+  min-width: 100%;
+  min-height: 100px;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls article {
+  width: 100%;
+  text-align: justify;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .form_control {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .form_control .form__group {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .form_control .form__group label {
+  font-size: 18px;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .form_control .form__group input {
+  padding: 5px;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .form_control .form__group:nth-of-type(8) {
+  width: 80%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .form_control .controls-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .form_control .controls-button button {
+  margin: 0 5%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .control_Proteccion {
+  display: flex;
+  flex-direction: column;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .control_Proteccion .proteccion_group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .control_Proteccion .proteccion_group label {
+  font-size: 18px;
+  margin-bottom: 1%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .control_Proteccion .proteccion_group input {
+  padding: 5px;
+  font-size: 15px;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .control_Proteccion .proteccion_group textarea {
+  text-align: justify;
+  padding: 10px 20px;
+  min-height: 180px;
+  max-height: 180px;
+  max-width: 100%;
+  min-width: 100%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .btn_control {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .btn_control button {
+  margin: 0 5%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados_cont {
+  display: flex;
+  flex-direction: column;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados_cont .estados_group {
+  width: 60%;
+  margin: 1% auto;
+  display: flex;
+  flex-direction: column;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados_cont .estados_group label {
+  font-size: 18px;
+  margin-bottom: 1%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados_cont .estados_group input {
+  padding: 5px;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   gap: 10px;
-  grid-template-areas: "barra_lateral barra_superior" "barra_lateral dashboard_main";
-  grid-template-columns: 1fr 7fr;
-  grid-template-rows: 1fr 10fr;
 }
-.dasboard_conteiner div, .dasboard_conteiner main {
-  background: green;
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid #D3D3D3;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
-.dasboard_conteiner .header__dashboard {
-  grid-area: barra_lateral;
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado a {
+  padding: 5px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
-.dasboard_conteiner .bar__dashboard {
-  grid-area: barra_superior;
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado a img {
+  width: 50%;
+  margin: auto;
 }
-.dasboard_conteiner .main__dashboard {
-  grid-area: dashboard_main;
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado a span {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #14740f;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado button {
+  width: 50%;
+  margin: 5% auto;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado .edit_estado {
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado .edit_estado div {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 4%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado .edit_estado div input {
+  padding: 5px;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado .edit__estados_F {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 5%;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado .edit__estados_F div {
+  margin: auto;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado:first-of-type {
+  grid-area: estado1;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado:nth-of-type(2) {
+  grid-area: estado2;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado:nth-of-type(3) {
+  grid-area: estado3;
+}
+.container-dashboard .content-dashboard .dashboard-container .dashboard__cont .controls .estados__grid .item_estado:last-of-type {
+  grid-area: estado4;
+}
+.container-dashboard .dashboard-header {
+  display: flex;
+  flex-direction: column;
+}
+.container-dashboard .dashboard-header .logo {
+  background: #FFFFFF;
+  width: 50%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+.container-dashboard .dashboard-header .logo img {
+  width: 100%;
+}
+.container-dashboard .dashboard-header ul {
+  background: #14740fbb;
+  display: flex;
+  flex-direction: column;
+}
+.container-dashboard .dashboard-header ul li {
+  list-style: none;
+  display: block;
+  cursor: pointer;
+}
+.container-dashboard .dashboard-header ul li a {
+  display: block;
+  padding: 20px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.container-dashboard .dashboard-header ul li a:hover {
+  cursor: pointer;
+  background: #1c550b;
+}
+.container-dashboard .dashboard-header ul li a.active {
+  background: #1c550b;
+  color: #FFFFFF;
+}
+.container-dashboard main {
+  display: flex;
+}
+.container-dashboard main .main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-dashboard main .main h3 {
+  color: #14740f;
 }
 
 /*# sourceMappingURL=styles.css.map */

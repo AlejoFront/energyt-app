@@ -5,18 +5,10 @@ import { useSelector } from 'react-redux'
 import ContentFoot from './ContentFoot'
 
 const Footer = () => {
-    const {footer} = useSelector(state => state.footer)
+    const footer = useSelector(state => state.footer)
     return (
         <footer>
-                {
-                    footer.map((footer, index) => (
-                        <ContentFoot  
-                            key={index}
-                            footer={footer}
-                        />
-                    ))
-                }
-
+            <ContentFoot footer={footer}/>
             <h2 className='titulo-final'>&copy; ENERGYT <span>S.A.S</span></h2>
         </footer>
     )
