@@ -49,7 +49,7 @@ const QueHacemosViewPrivate = () => {
                         </div>
                         <div className='group-form'>
                             <label>Descripción</label>
-                            <CKEditor key='ckAdd'  editor={ClassicEditor}  onChange={(e, editor) => setDdescripcion(editor.getData())}  />
+                            <CKEditor key='ckAdd'  editor={ClassicEditor} data={descripcion}  onChange={(e, editor) => setDdescripcion(editor.getData())}  />
                             {  error ? descripcion === '' ? <span className='err'>*</span> : '' : undefined}
                         </div>
                         

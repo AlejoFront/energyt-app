@@ -62,6 +62,7 @@ const SobreNosotrosViewPublic = () => {
                             key={index}
                             indice={index+1}
                             anio={estado.anio}
+                            link={estado.link}
                         />
                     ))
                 }

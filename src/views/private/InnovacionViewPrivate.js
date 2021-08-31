@@ -6,7 +6,8 @@ import Loading from '../../components/loading/Loading'
 import { ICON_UPLOAD } from '../../directories/images'
 import { updateGalInnovacion, updateInnovacion } from '../../helpers/InnovacionHelpers'
 import { startAddImgGal, startUpdateInnovacion } from '../../reducer/InnovacionReducer'
-
+import { CKEditor } from '@ckeditor/ckeditor5-react'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 const InnovacionViewPrivate = () => {
     const dispatch = useDispatch();
     const innovacion = useSelector(state => state.innovacion)
@@ -73,7 +74,7 @@ const InnovacionViewPrivate = () => {
                 </div>
                 {
                     edit
-                    ? <input type='text' value={titleUp} onChange={(e) => setTitleUp(e.target.value)} />
+                    ? <input type='text' placeholder='Digite el Nombre de la Innovación' value={titleUp} onChange={(e) => setTitleUp(e.target.value)} />
                     :<h3 className='titulo'>{innovacion.title}</h3>
                 }
                 
@@ -92,12 +93,12 @@ const InnovacionViewPrivate = () => {
                                     onChange={(e) => setphotoUp(e.target.files[0])}
                                 />
                             </>
-                        :<img src={innovacion.fotoPrincipal} alt='Foto' />
+                        :<img src={innovacion.fotoPrincipal} alt=' Foto Innovación' />
                     }
                     
                     {
                         edit
-                        ? <textarea value={descripcionUp} onChange={(e) => setDescripcionUp(e.target.value)} />
+                        ? <CKEditor key='ckInn' editor={ClassicEditor} data={descripcionUp} onChange={(e, editor) => setDescripcionUp(editor.getData())} />
                         :<p>{innovacion.descripcion}</p>
                     }
                 </div>
