@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { auth } from '../../firebase/firebase'
 
 const AuthenticationViewPublic = () => {
@@ -15,6 +15,15 @@ const AuthenticationViewPublic = () => {
             setMessage(e.message)
         })
     }
+
+
+    useEffect(() => {
+        
+        return () => {
+            cleanup
+        }
+    }, [input])
+
     return (
         <div className='contenedor__auth'>
             <div className='form__auth'>
