@@ -3,7 +3,7 @@ import { auth } from '../../firebase/firebase'
 
 const AuthenticationViewPublic = () => {
     const handleSubmit = () => {
-        auth.signInWithEmailAndPassword('administrador@gmail.com','123456789')
+        auth.signInWithEmailAndPassword('desarrollo.energyt@gmail.com','energyt2021')
         .then(() => console.log('exito'))
         .catch(e => console.log(e))
     }
