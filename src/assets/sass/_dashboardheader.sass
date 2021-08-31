@@ -1,0 +1,33 @@
+.dashboard-header
+    display: flex
+    flex-direction: column
+    .logo
+        background: $blanco
+        width: 50%
+        margin: auto
+        margin-top: 10%
+        margin-bottom: 5%
+        img
+            width: 100%
+    ul
+        background: $verde-transparencia
+        display: flex
+        flex-direction: column
+        li
+            list-style: none
+            display: block
+            cursor: pointer
+            a
+                display: block
+                padding: 20px
+                font-weight: lighter
+                letter-spacing: 2px
+                color: #FFFFFF
+                text-decoration: none
+                &:hover
+                    cursor: pointer
+                    background: $colorActive
+                    
+                &.active
+                    background: $colorActive
+                    color: $blanco

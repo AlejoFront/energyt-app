@@ -52,19 +52,22 @@ const ProjectItem = ({id, img, descripcion_corta, descripcion_larga, title}) => 
                     </>
                 :<h2>{title}</h2>
             }
-            <label>Descripción Corta</label>
-            {
-                edit
-                ? <textarea name='desctipcion_c' value={desctipcion_c} onChange={handleInputChange} />
-                :<article className='desc_corta'>{descripcion_corta}</article>
-            }
-            <label>Descripción Larga</label>
-            {
-                edit
-                ? <textarea name='descripcion_l' value={descripcion_l} onChange={handleInputChange} />
-                :<article className='desc_larga'>{descripcion_larga}</article>
-            }
-            
+           <div className='cont_group_project'>
+                <label>Descripción Corta</label>
+                {
+                    edit
+                    ? <textarea name='desctipcion_c' value={desctipcion_c} onChange={handleInputChange} />
+                    :<article className='desc_corta'>{descripcion_corta}</article>
+                }
+           </div>
+           <div className='cont_group_project'>
+                <label>Descripción Larga</label>
+                {
+                    edit
+                    ? <textarea name='descripcion_l' value={descripcion_l} onChange={handleInputChange} />
+                    :<article className='desc_larga'>{descripcion_larga}</article>
+                }
+            </div>
             
             
             <div className='btn__controls'>

@@ -9,7 +9,7 @@ const ProjectsItem = ({project, indice}) => {
                 <img src={project.img} alt='Foto' className="card__picture" />
             </figure>
             <h3 className="project_title">{project.nombre}</h3>
-            <p className="project__paragraph">{project.descripción_corta}</p>
+            <p className="project__paragraph">{project.descripcion_corta}</p>
             <a className="btn btn-info" href={`#target${indice+1}`}>Ver Más</a>
         </div>
             <ModalProject 

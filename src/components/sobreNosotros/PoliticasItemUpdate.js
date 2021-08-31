@@ -25,7 +25,7 @@ const PoliticasItemUpdate = ({id,title, descripcion, order, nameClass}) => {
     }
 
     return (
-        <div className='controls'>
+        <div className='controls_politicas ctr_p'>
             <h2 className='titulo'>{title}</h2>
             {
                 edit

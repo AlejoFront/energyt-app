@@ -5,16 +5,18 @@ import { updateQueHacemos } from '../../helpers/QueHacemosHelpers';
 import { useForm } from '../../hooks/useForm';
 import { startUpdateQueHacemos } from '../../reducer/QueHacemosReducer';
 import Loading from '../loading/Loading';
-
+import ReactHtmlParser from 'react-html-parser'
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 const QueHacemosEditItem = ({id, icono, titulo, descripcion}) => {
     const dispatch = useDispatch()
     const [edit, setEdit] = useState(false)
     const [loading, setLoading] = useState(false)
     const [values, handleInputChange] = useForm({
-        photoUp: '', tituloUp: titulo, desctipcionUp: descripcion
+        photoUp: '', tituloUp: titulo
     });
-    const {photoUp, tituloUp, desctipcionUp} = values
-
+    const {photoUp, tituloUp, } = values
+    const [desctipcionUp, setDesctipcionUp] = useState(descripcion)
     const handleUpdate = () => {
         setLoading(true)
         let image,imgUrl = null;
@@ -73,8 +75,8 @@ const QueHacemosEditItem = ({id, icono, titulo, descripcion}) => {
                 }
                 {
                     edit 
-                    ? <textarea name='desctipcionUp' value={desctipcionUp} onChange={handleInputChange}/>
-                    :<p>{descripcion}</p>
+                    ? <CKEditor key='ckEd'  editor={ClassicEditor} data={desctipcionUp} onChange={(e, editor) => setDesctipcionUp(editor.getData())}/>
+                    :<article>{ReactHtmlParser(descripcion)}</article>
                 }
                 
             </div>

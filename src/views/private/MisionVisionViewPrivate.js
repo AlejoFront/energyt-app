@@ -46,8 +46,9 @@ const MisionVisionViewPrivate = () => {
     return (
         <Dashboard>
             <div className='dashboard__cont'>
-                <div className='controls'>
-                    <h2 className='titulo' >Misión</h2>
+                <h2 className='titulo' >Misión</h2>
+                <div className='controls ctr_M_V'>
+                   
                     {
                         editM
                         ?<textarea value={upM} onChange={(e) => setupM(e.target.value)} />
@@ -68,9 +69,9 @@ const MisionVisionViewPrivate = () => {
                         }
                     </div>
                 </div>
-                <hr/>
-                <div className='controls'>
-                    <h2 className='titulo' >Visión</h2>
+                <h2 className='titulo' >Visión</h2>
+                <div className='controls ctr_M_V'>
+                    
                     {
                         editV
                         ?<textarea value={upV} onChange={(e) => setupV(e.target.value)}/>

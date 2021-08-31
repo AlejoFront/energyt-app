@@ -11,6 +11,7 @@ const InnovacionViewPrivate = () => {
     const dispatch = useDispatch();
     const innovacion = useSelector(state => state.innovacion)
     const [loading, setLoading] = useState(false)
+    const [loading2, setLoading2] = useState(false)
     const [titleUp, setTitleUp] = useState(innovacion.title)
     const [photoUp, setphotoUp] = useState('')
     const [photoGalUp, setphotoGalUp] = useState('')
@@ -27,7 +28,7 @@ const InnovacionViewPrivate = () => {
             image = photoUp;
             imgUrl = URL.createObjectURL(image);
         }
-        updateInnovacion(innovacion.id,descripcionUp,photoUp,titleUp)
+        updateInnovacion(innovacion.id,descripcionUp,image,titleUp)
         .then(() => {
                 dispatch(startUpdateInnovacion(imgUrl,descripcionUp,titleUp))
                 setLoading(false)
@@ -39,12 +40,12 @@ const InnovacionViewPrivate = () => {
     }
 
     const handleAddGal = () => {
-        setLoading(true)
+        setLoading2(true)
         let imgUrl = URL.createObjectURL(photoGalUp);
         updateGalInnovacion(innovacion.id, photoGalUp)
         .then(() => {
             dispatch(startAddImgGal(imgUrl))
-            setLoading(false)
+            setLoading2(false)
         })
         .catch(e => {
             console.log(e)
@@ -107,12 +108,12 @@ const InnovacionViewPrivate = () => {
                         <img src={ICON_UPLOAD} alt='icon' />
                     </label>
                     {
-                        loading
+                        loading2
                         ? <Loading />
                         :<button className='btn_success' 
                             onClick={handleAddGal}
                             disabled={photoGalUp === '' ? true: false}
-                        >Agregar</button>
+                        >+</button>
                     }
                     <input
                         type='file'

@@ -1,8 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { ICON__LOGO } from '../../directories/images'
-
+import { auth } from '../../firebase/firebase' 
 const Dashboard = ({children}) => {
+    const handleSignOut  = async () => {
+        await auth.signOut()
+    }
     return (
         <div className='container-dashboard'>
             <div className='dashboard-header'>
@@ -23,7 +26,7 @@ const Dashboard = ({children}) => {
             <main>
                 <div className='main'>
                     <h3> Bienvenido </h3>
-                    <button className='btn_danger' type='button'>Salir</button>
+                    <button className='btn_danger' onClick={handleSignOut} type='button'>Salir</button>
                 </div>
             </main>
             <div className='content-dashboard'>

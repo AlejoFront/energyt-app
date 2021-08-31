@@ -29,8 +29,8 @@ const EstadosFinancierosViewPrivate = () => {
     return (
         <Dashboard>
             <div className='dashboard__cont'>
-                <div className='controls'>
-                    <h2 className='titulo' >Estados Financieros</h2>
+                <h2 className='titulo' >Estados Financieros</h2>
+                <div className='controls_estados'>
                     <div className='estados_cont'>
                         <div className='estados_group'>
                             <label>Url</label>

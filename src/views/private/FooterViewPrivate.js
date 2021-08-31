@@ -38,7 +38,7 @@ const FooterViewPrivate = () => {
         <Dashboard>
             <div className='dashboard__cont'>
                 <h2 className='titulo' >Contacto</h2>
-                <div className='form_control'>
+                <div className='control_Footer'>
                     <ItemsFooter label='Telefono' value={upTelefono} change={setUpTelefono} edit={edit} />
                     <ItemsFooter label='Movil' value={upMovil} change={setUpMovil} edit={edit} />
                     <ItemsFooter label='Dirección' value={upDireccion} change={setUpDireccion} edit={edit} />

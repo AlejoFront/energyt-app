@@ -10,7 +10,6 @@ const ProyectosViewPrivate = () => {
         <Dashboard>
             <div className='dashboard__cont'>
                 <h2 className='titulo' >Proyectos</h2>
-                <div className='controls'>
                     <div className='container__projects'>
                         <AddProject />
                         {
@@ -26,7 +25,6 @@ const ProyectosViewPrivate = () => {
                             ))
                         }
                    </div>
-                </div>
             </div>
         </Dashboard>
     )
