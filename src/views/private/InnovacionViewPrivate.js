@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import InnovacionGalItem from '../../components/innovacion/InnovacionGalItem'
 import Dashboard from '../../components/layout/Dashboard'
 import Loading from '../../components/loading/Loading'
 import { ICON_UPLOAD } from '../../directories/images'
 import { updateGalInnovacion, updateInnovacion } from '../../helpers/InnovacionHelpers'
-import { startUpdateInnovacion } from '../../reducer/InnovacionReducer'
+import { startAddImgGal, startUpdateInnovacion } from '../../reducer/InnovacionReducer'
 
 const InnovacionViewPrivate = () => {
     const dispatch = useDispatch();
@@ -38,9 +39,12 @@ const InnovacionViewPrivate = () => {
     }
 
     const handleAddGal = () => {
+        setLoading(true)
+        let imgUrl = URL.createObjectURL(photoGalUp);
         updateGalInnovacion(innovacion.id, photoGalUp)
         .then(() => {
-            console.log('exito')
+            dispatch(startAddImgGal(imgUrl))
+            setLoading(false)
         })
         .catch(e => {
             console.log(e)
@@ -99,15 +103,33 @@ const InnovacionViewPrivate = () => {
                 <h3 className='titulo'>Galeria</h3>
                 <div className='up_gal_innovacion'>
                     <label htmlFor='upload_gal'>
+                       <span>Subir imagenes </span>
                         <img src={ICON_UPLOAD} alt='icon' />
                     </label>
-                    <button className='btn_success' onClick={handleAddGal}>Agregar</button>
+                    {
+                        loading
+                        ? <Loading />
+                        :<button className='btn_success' 
+                            onClick={handleAddGal}
+                            disabled={photoGalUp === '' ? true: false}
+                        >Agregar</button>
+                    }
                     <input
                         type='file'
                         name='photo'
                         id='upload_gal'
                         onChange={(e) => setphotoGalUp(e.target.files[0])}
                     />
+                </div>
+                <div className='gal__innovacion'>
+                    {
+                        innovacion.galeria?.map((gal, index) => (
+                            <InnovacionGalItem 
+                                key={index}
+                                img={gal}
+                            />
+                        ))
+                    }
                 </div>
             </div>
         </Dashboard>
