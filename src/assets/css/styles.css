@@ -7,6 +7,10 @@
   -webkit-box-sizing: border-box;
 }
 
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .contenedor {
   padding: 60px 0;
   width: 90%;
@@ -20,6 +24,8 @@
   font-size: 30px;
   text-align: center;
   margin-bottom: 60px;
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
 }
 
 .btn {
@@ -323,6 +329,7 @@ header .wave {
   margin: auto;
 }
 .acerca-de .contenedor-acerca-de .contenido-textos p {
+  letter-spacing: 1.5px;
   font-size: 18px;
   text-align: justify;
 }
@@ -386,6 +393,10 @@ header .wave {
 }
 
 @media screen and (max-width: 414px) {
+  .nuestros-clientes {
+    background: #F2F2F2;
+  }
+
   .acerca-de .contenedor-acerca-de {
     flex-direction: column;
   }
@@ -495,6 +506,8 @@ header .wave {
 .sobre-nosotros > .contenedor .subtitulo {
   color: #14740f;
   text-align: center;
+  font-size: 20px;
+  letter-spacing: 1.5px;
 }
 .sobre-nosotros > .contenedor p {
   width: 95%;
@@ -502,6 +515,8 @@ header .wave {
   margin-top: 5%;
   text-align: justify;
   padding: 10px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 .sobre-nosotros > .contenedor .valores__corporativos {
   grid-area: valores__corporativos;
@@ -514,6 +529,8 @@ header .wave {
 .sobre-nosotros > .contenedor .valores__corporativos .subtitulo {
   grid-area: titulo;
   margin-bottom: 5%;
+  font-size: 20px;
+  letter-spacing: 1.5px;
 }
 .sobre-nosotros > .contenedor .valores__corporativos .img {
   position: relative;
@@ -545,10 +562,16 @@ header .wave {
 .sobre-nosotros > .contenedor .valores__corporativos .texto h4 {
   color: #14740f;
   text-align: center;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 .sobre-nosotros > .contenedor .valores__corporativos .texto h4::after {
   content: " Honestidad";
   animation: key_valores 180s alternate 15s infinite;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto p {
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 .sobre-nosotros > .contenedor .valores__corporativos .texto p::after {
   content: " Los corazones honestos, producen acciones honestas.";
@@ -572,6 +595,8 @@ header .wave {
 .politicas > .contenedor .subtitulo {
   text-align: center;
   color: #14740f;
+  font-size: 20px;
+  letter-spacing: 1.5px;
 }
 .politicas > .contenedor p {
   width: 95%;
@@ -579,6 +604,8 @@ header .wave {
   margin-top: 5%;
   text-align: justify;
   padding: 10px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 .estados__financieros {
@@ -732,12 +759,15 @@ header .wave {
 .que__hacemos .card__container .card__item .card__title {
   margin: 20px 0;
   text-align: center;
+  font-size: 20px;
+  letter-spacing: 1.5px;
 }
 .que__hacemos .card__container .card__item .card__paragraph {
   padding: 10px;
   text-align: justify;
   font-weight: 300;
   margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 .que__hacemos .card__container .card__item:first-of-type {
   grid-area: card1;
@@ -1074,13 +1104,19 @@ footer .contenedor-footer {
   border-bottom: 1px solid #ccc;
 }
 footer .contenedor-footer .content-foo {
+  font-size: 18px;
   text-align: center;
   margin-bottom: 2%;
   color: #FFFFFF;
 }
 footer .contenedor-footer .content-foo h4 {
+  letter-spacing: 1.5px;
+  text-transform: capitalize;
   padding-bottom: 5px;
   margin-bottom: 10px;
+}
+footer .contenedor-footer .content-foo p {
+  letter-spacing: 1px;
 }
 footer .footer__social {
   display: flex;
