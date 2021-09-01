@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { auth } from '../../firebase/firebase'
+import { authSignIn } from '../../helpers/AuthHelpers'
+
 
 const AuthenticationViewPublic = () => {
     const [email, setEmail] = useState('')
@@ -8,8 +9,8 @@ const AuthenticationViewPublic = () => {
     const [msg, setMsg] = useState('The email address is badly formatted.')
     const handleSubmit = () => {
         //'desarrollo.energyt@gmail.com','energyt2021'
-        auth.signInWithEmailAndPassword(email,password)
-        .then(() => console.log('exito'))
+        authSignIn(email,password)
+        .then(() => {})
         .catch(e => {
             setError(true)
             setMsg(e.message)
