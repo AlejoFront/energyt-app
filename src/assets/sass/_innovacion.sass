@@ -8,13 +8,19 @@
     background-size: cover
     background-position: center
     background-attachment: fixed
+
 .section__uno
     //background-image: url(../img/portada01.jpg)
     background: $gris
     height: 100vh
-    nav
+    >nav
+        display: flex
+        justify-content: flex-end
+        flex-wrap: wrap
+        align-items: center
         text-align: right
         padding: 30px 50px 0 0
+        
         > a
             color: $negro
             font-weight: 300
@@ -83,6 +89,11 @@
         .galeria__innova__item
             width: calc( 100% / 2 - 10px ) !important
 
+@media (max-width: 461)
+    .section__innova
+        > nav
+            background: red !important
+
 @media (max-width: 414px)
     .galeria_innova
         .galeria__innova__item
@@ -98,3 +109,4 @@
         flex-direction: column
         .galeria__innova__item
             width: 100% !important
+

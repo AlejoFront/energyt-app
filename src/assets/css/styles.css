@@ -213,14 +213,18 @@ header {
   width: 100%;
   height: 100vh;
   background: #14740f;
-  background: -webkit-linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada/portada01.jpg);
-  background: linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada/portada01.jpg);
+  background: -webkit-linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada/portada.jpeg);
+  background: linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada/portada.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
 }
 header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
   text-align: right;
   padding: 30px 50px 0 0;
 }
@@ -244,6 +248,7 @@ header .textos-header {
   text-align: center;
 }
 header .textos-header h1 {
+  animation: headerKey 2s linear;
   font-size: 50px;
   color: #FFF;
 }
@@ -276,6 +281,14 @@ header .wave {
     font-size: 25px;
   }
 }
+@media screen and (max-width: 461px) {
+  header nav {
+    justify-content: flex-end;
+  }
+  header nav > a {
+    font-size: 17px;
+  }
+}
 @media screen and (max-width: 414px) {
   header nav {
     margin: 0;
@@ -294,8 +307,6 @@ header .wave {
     padding: 0;
     padding-top: 30px;
     text-align: center;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
   }
   header nav a {
     font-size: 14px;
@@ -836,21 +847,25 @@ header .wave {
   background: #F2F2F2;
   height: 100vh;
 }
-.section__uno nav {
+.section__uno > nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
   text-align: right;
   padding: 30px 50px 0 0;
 }
-.section__uno nav > a {
+.section__uno > nav > a {
   color: #000000;
   font-weight: 300;
   font-size: 18px;
   text-decoration: none;
   margin-right: 10px;
 }
-.section__uno nav > a.active {
+.section__uno > nav > a.active {
   color: #FFFFFF;
 }
-.section__uno nav > a:hover {
+.section__uno > nav > a:hover {
   text-decoration: underline;
 }
 .section__uno h1 {
@@ -921,6 +936,11 @@ header .wave {
   }
   .galeria_innova .galeria__innova__item {
     width: calc( 100% / 2 - 10px ) !important;
+  }
+}
+@media (max-width: 461) {
+  .section__innova > nav {
+    background: red !important;
   }
 }
 @media (max-width: 414px) {
@@ -1038,21 +1058,11 @@ header .wave {
   }
 }
 footer {
-  background: #cecedd;
-  padding: 160px 0 50px;
+  background: #14740f;
+  padding: 100px 0 50px;
   margin: auto;
   overflow: hidden;
   position: relative;
-}
-footer::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  background: #FFFFFF;
-  top: 0;
-  left: 0;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 footer .contenedor-footer {
   display: flex;
@@ -1066,7 +1076,7 @@ footer .contenedor-footer {
 footer .contenedor-footer .content-foo {
   text-align: center;
   margin-bottom: 2%;
-  color: #14740f;
+  color: #FFFFFF;
 }
 footer .contenedor-footer .content-foo h4 {
   padding-bottom: 5px;
@@ -1104,9 +1114,20 @@ footer .titulo-final {
   text-align: center;
   font-size: 24px;
   margin: 20px 0 0 0;
-  color: #14740f;
+  color: #FFFFFF;
 }
 
+@keyframes headerKey {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes key_valores {
   0% {
     content: " Honestidad";

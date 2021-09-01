@@ -25,22 +25,27 @@ const QueHacemosViewPublic = () => {
                     </div>
                 </div>
             </section>
-            <section className="projects" id="projects">
-                <div className="contenedor">
-                    <h2 className="titulo">Algunos Proyectos</h2>
-                    <div className="contenedor-projects">
-                        {
-                            projects.map((project, index) => (
-                                <ProjectsItem
-                                    key={index}
-                                    indice={index}
-                                    project={project}
-                                />
-                            ))
-                        }
+            {
+                projects.length > 0 
+                &&
+                <section className="projects" id="projects">
+                    <div className="contenedor">
+                        <h2 className="titulo">Algunos Proyectos</h2>
+                        <div className="contenedor-projects">
+                            {
+                                projects.map((project, index) => (
+                                    <ProjectsItem
+                                        key={index}
+                                        indice={index}
+                                        project={project}
+                                    />
+                                ))
+                            }
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            }
+            
         </Layout>
     )
 }

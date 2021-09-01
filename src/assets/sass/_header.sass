@@ -2,13 +2,17 @@ header
     width: 100%
     height: 100vh
     background: $verde
-    background: -webkit-linear-gradient(to right, hsla(117, 77%, 26%, 0.459), hsla(78, 84%, 27%, 0.664)), url(../img/portada/portada01.jpg)
-    background: linear-gradient(to right, hsla(117, 77%, 26%, 0.459), hsla(78, 84%, 27%, 0.664)), url(../img/portada/portada01.jpg)
+    background: -webkit-linear-gradient(to right, hsla(117, 77%, 26%, 0.459), hsla(78, 84%, 27%, 0.664)), url(../img/portada/portada.jpeg)
+    background: linear-gradient(to right, hsla(117, 77%, 26%, 0.459), hsla(78, 84%, 27%, 0.664)), url(../img/portada/portada.jpeg)
     background-size: cover
     background-position: center //
     background-attachment: fixed
     position: relative
     nav
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-end
+        align-items: center
         text-align: right
         padding: 30px 50px 0 0
         > a
@@ -28,6 +32,7 @@ header
         flex-direction: column
         text-align: center
         h1
+            animation: headerKey 2s linear
             font-size: 50px
             color: #FFF
             span
@@ -56,7 +61,13 @@ header
                 font-size: 40px
             h2
                 font-size: 25px
-            
+
+@media screen and (max-width:461px)
+    header
+        nav
+            justify-content: flex-end
+            > a
+                font-size: 17px
 
 @media screen and (max-width:414px)
     header
@@ -77,8 +88,6 @@ header
             padding: 0
             padding-top: 30px
             text-align: center
-            display: grid
-            grid-template-columns: repeat(3, 1fr)
             a
                 font-size: 14px
                 text-align: center
