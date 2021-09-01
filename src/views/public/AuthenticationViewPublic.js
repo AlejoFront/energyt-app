@@ -5,24 +5,23 @@ const AuthenticationViewPublic = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(false)
-    const [message, setMessage] = useState('')
+    const [msg, setMsg] = useState('The email address is badly formatted.')
     const handleSubmit = () => {
         //'desarrollo.energyt@gmail.com','energyt2021'
         auth.signInWithEmailAndPassword(email,password)
         .then(() => console.log('exito'))
         .catch(e => {
             setError(true)
-            setMessage(e.message)
+            setMsg(e.message)
         })
     }
 
 
     useEffect(() => {
-        
-        return () => {
-            cleanup
-        }
-    }, [input])
+        setTimeout(() => {
+            setError(false);
+        },9000)
+    }, [error])
 
     return (
         <div className='contenedor__auth'>
@@ -30,15 +29,17 @@ const AuthenticationViewPublic = () => {
                 <div className='form'>
                     <h1>Autenticación</h1>
                     <div className="grupo">
-                        <input type="email" name="" id="" required /><span className="barra"></span>
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                        <span className="barra"></span>
                         <label>Email</label>
                     </div>
-                    <div class="grupo">
-                        <input type="password" name="" id="" required /><span className="barra"></span>
+                    <div className="grupo">
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                        <span className="barra"></span>
                         <label>Contraseña</label>
                     </div>
                     {
-                        error && <div className='grupo'> <span className='alert-danger'>{message}</span> </div>
+                        error && <div className='alert'> <span className='alert-danger'>{msg}</span> </div>
                     }
                     <div className='btn_control_auth'>
                         <button type="button" onClick={handleSubmit} className='btn_success'>Iniciar Sesión</button>

@@ -26,9 +26,9 @@ const PrincipalViewPublic = () => {
                     </div>
                 </div>
             </section>
+            <h2 className="titulo">Nuestros Clientes</h2>
             <section className="nuestros-clientes" id="nuestros-clientes">
                 <div className="contenedor">
-                    <h2 className="titulo">Nuestros Clientes</h2>
                         <div className="galeria-clientes">
                             {
                                 clients.map((client, index) => (

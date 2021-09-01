@@ -1,10 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { ICON__LOGO } from '../../directories/images'
 import { auth } from '../../firebase/firebase' 
+import { authLogout } from '../../reducer/AuthReducer'
 const Dashboard = ({children}) => {
+    const dispatch = useDispatch()
     const handleSignOut  = async () => {
         await auth.signOut()
+        .then(() => dispatch(authLogout()))
     }
     return (
         <div className='container-dashboard'>

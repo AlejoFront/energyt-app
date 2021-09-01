@@ -130,7 +130,7 @@
 }
 .contenedor__auth .form__auth {
   background: #fff;
-  width: 30%;
+  width: 50%;
   padding: 10px 0;
   border-radius: 10px;
   box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
@@ -202,6 +202,11 @@
 }
 .contenedor__auth .form__auth .form .btn_control_auth > .btn_success {
   width: 30%;
+}
+.contenedor__auth .form__auth .form .alert {
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: center;
 }
 
 header {
@@ -318,7 +323,10 @@ header .wave {
 }
 
 .nuestros-clientes {
-  background: #FFFFFF;
+  background: url(../img/portada/portada02.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 .nuestros-clientes .galeria-clientes {
   display: flex;
@@ -326,6 +334,7 @@ header .wave {
   flex-wrap: wrap;
 }
 .nuestros-clientes .galeria-clientes .imagen-port {
+  background: #FFFFFF;
   width: 24%;
   height: 200px;
   margin-bottom: 15px;
