@@ -1093,6 +1093,15 @@ footer {
   margin: auto;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+footer a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
 }
 footer .contenedor-footer {
   display: flex;

@@ -11,12 +11,12 @@ const ContentFoot = ({footer}) => {
                 <IconSocial Icon={ICON__INSTAGRAM} link={footer.red_instagram} />
             </div>
             <div className='contenedor-footer'>
-                <ItemContact title='telefono' descripcion={footer.telefono} nameClass=' ' />
-                <ItemContact title='movil' descripcion={footer.movil} nameClass=' ' />
-                <ItemContact title='email' descripcion={footer.email} nameClass='p-email' />
-                <ItemContact title='dirección' descripcion={footer.direccion} nameClass=' ' />
-                <ItemContact title='horario' descripcion={footer.horario} nameClass=' ' />
-
+                <ItemContact title='telefono' acceso={false} descripcion={footer.telefono} nameClass=' ' />
+                <ItemContact title='movil' acceso={false} descripcion={footer.movil} nameClass=' ' />
+                <ItemContact title='email' acceso={false} descripcion={footer.email} nameClass='p-email' />
+                <ItemContact title='dirección' acceso={false} descripcion={footer.direccion} nameClass=' ' />
+                <ItemContact title='horario' acceso={false} descripcion={footer.horario} nameClass=' ' />
+               
             </div>
         </>
     )

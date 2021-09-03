@@ -10,6 +10,7 @@ const Footer = () => {
         <footer>
             <ContentFoot footer={footer}/>
             <h2 className='titulo-final'>&copy; ENERGYT <span>S.A.S</span></h2>
+            <a href='http://energyt.co:2095/' rel='noreferrer' target='_blank'>Correo Administrativo</a>
         </footer>
     )
 }
