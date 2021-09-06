@@ -16,7 +16,6 @@ const ContentFoot = ({footer}) => {
                 <ItemContact title='email' acceso={false} descripcion={footer.email} nameClass='p-email' />
                 <ItemContact title='dirección' acceso={false} descripcion={footer.direccion} nameClass=' ' />
                 <ItemContact title='horario' acceso={false} descripcion={footer.horario} nameClass=' ' />
-               
             </div>
         </>
     )

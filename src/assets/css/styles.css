@@ -1482,6 +1482,9 @@ footer .titulo-final {
   justify-content: space-evenly;
   margin-top: 2%;
 }
+.container-dashboard .content-dashboard .dashboard__cont .ctr_p .controls-button button {
+  width: 25%;
+}
 
 .container-dashboard .content-dashboard .dashboard__cont .control_Proteccion {
   width: 60%;
@@ -1518,6 +1521,7 @@ footer .titulo-final {
   justify-content: center;
 }
 .container-dashboard .content-dashboard .dashboard__cont .control_Proteccion .btn_control button {
+  width: 20%;
   margin: 0 5%;
 }
 
