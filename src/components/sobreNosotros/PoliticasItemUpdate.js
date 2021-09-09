@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux'
 import { UpdatePolitica } from '../../helpers/SobreNosotrosHelpers'
 import { startUpdatePolitica } from '../../reducer/SobreNosotrosReducer'
 import Loading from '../loading/Loading'
+import ReactHtmlParser from 'react-html-parser'
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 const PoliticasItemUpdate = ({id,title, descripcion, order, nameClass}) => {
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(false)
@@ -29,8 +32,9 @@ const PoliticasItemUpdate = ({id,title, descripcion, order, nameClass}) => {
             <h2 className='titulo'>{title}</h2>
             {
                 edit
-                ?<textarea value={update} onChange={(e) => setUpdate(e.target.value)} />
-                :<article> {descripcion} </article>
+                ? <CKEditor key='ckEdP' data={update}  editor={ClassicEditor} onChange={(e, editor) => setUpdate(editor.getData())} />
+                //<textarea value={update} onChange={(e) => setUpdate(e.target.value)} />
+                :<article> {ReactHtmlParser(descripcion)} </article>
             }
             
             <div className='controls-button'>
