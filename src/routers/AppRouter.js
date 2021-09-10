@@ -25,13 +25,10 @@ const AppRouter = () => {
 
 
     useEffect(() => {
-
         dispatch(authLoading());
         auth.onAuthStateChanged(async user =>{
             if (user?.uid) {
                 dispatch(await authLogin());
-            }else {
-                dispatch(authLoaded());
             }
         })
         getFooter()
@@ -59,8 +56,12 @@ const AppRouter = () => {
         .then(response => dispatch(startLoadProteccion(response)))
         .catch(e => console.log(e));
         getInnovacion()
-        .then(response => dispatch(startLoadInnovacion(response)))
+        .then(response => {
+            dispatch(startLoadInnovacion(response));
+            dispatch(authLoaded());
+        })
         .catch(e => console.log(e));
+
         return () => {}
     }, [dispatch])
 
