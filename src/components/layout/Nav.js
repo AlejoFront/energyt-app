@@ -9,7 +9,7 @@ const Nav = () => {
             <NavLink to='/sobre-nosotros'>Sobre Nosotros</NavLink>
             <NavLink to='/que-hacemos'>¿Qué Hacemos?</NavLink>
             {
-                (title !== null || descripcion !== null)
+                (title !== null && descripcion !== null)
                 && <NavLink to='/innovacion'>Innovación</NavLink>
             }
         </nav>
