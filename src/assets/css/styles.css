@@ -747,11 +747,9 @@ header .wave {
   align-items: center;
 }
 .que__hacemos .card__container .card__item .card__img {
-  background: #14740f;
   margin-top: 20px;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -759,7 +757,6 @@ header .wave {
 .que__hacemos .card__container .card__item .card__img img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
 }
 .que__hacemos .card__container .card__item .card__title {
   margin: 20px 0;
