@@ -7,12 +7,13 @@ export const getFooter = async () => {
     return footer
 }
 
-export const updateFooter = async (id,red_instagram,red_Facebook, red_youtube,direccion,movil,horario,email,telefono) => {
+export const updateFooter = async (id,red_instagram,red_Facebook, red_youtube,red_Linkedin,direccion,movil,horario,email,telefono) => {
     return await db.collection('footer')
     .doc(id).update({
         red_instagram: red_instagram,
         red_Facebook: red_Facebook,
         red_youtube: red_youtube,
+        red_Linkedin: red_Linkedin,
         direccion: direccion,
         movil: movil,
         horario: horario,

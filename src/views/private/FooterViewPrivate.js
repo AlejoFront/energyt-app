@@ -18,13 +18,14 @@ const FooterViewPrivate = () => {
     const [upFacebook, setUpFacebook] = useState(footer.red_Facebook)
     const [upYoutube, setUpYoutube] = useState(footer.red_youtube)
     const [upInstagram, setUpInstagram] = useState(footer.red_instagram)
+    const [upLinkedin, setUpLinkedin] = useState(footer.red_Linkedin)
     const [upHorario, setUpHorario] = useState(footer.horario)
 
     const handleUpdate = () => {
         setLoading(true)
-        updateFooter(footer.id,upInstagram,upFacebook,upYoutube,upDireccion,upMovil,upHorario,upEmail,upTelefono)
+        updateFooter(footer.id,upInstagram,upFacebook,upYoutube,upLinkedin,upDireccion,upMovil,upHorario,upEmail,upTelefono)
         .then(() => {
-            dispatch(startUpdateFooter(footer.id,upInstagram,upFacebook,upYoutube,upDireccion,upMovil,upHorario,upEmail,upTelefono))
+            dispatch(startUpdateFooter(footer.id,upInstagram,upFacebook,upYoutube,upLinkedin,upDireccion,upMovil,upHorario,upEmail,upTelefono))
             setLoading(false)
             setEdit(true)
         })
@@ -46,6 +47,7 @@ const FooterViewPrivate = () => {
                     <ItemsFooter label='Facebook' value={upFacebook} change={setUpFacebook} edit={edit} />
                     <ItemsFooter label='Youtube' value={upYoutube} change={setUpYoutube} edit={edit} />
                     <ItemsFooter label='Instagram' value={upInstagram} change={setUpInstagram} edit={edit} />
+                    <ItemsFooter label='Linkedin' value={upLinkedin} change={setUpLinkedin} edit={edit} />
                     <ItemsFooter label='Horario' value={upHorario} change={setUpHorario} edit={edit} />
                     <div className='controls-button'>
                         {

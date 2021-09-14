@@ -4,11 +4,11 @@ const initialState = { }
 
 
 export const startLoadFooter = footer => ({ type: FOOTER_LOAD, payload: footer });
-export const startUpdateFooter = (id,red_instagram,red_Facebook,red_youtube,direccion,movil,horario,email,telefono) => ({
+export const startUpdateFooter = (id,red_instagram,red_Facebook,red_youtube,red_Linkedin,direccion,movil,horario,email,telefono) => ({
     type: FOOTER_UPDATE,
     payload: {
         id,red_instagram,red_Facebook,
-        red_youtube,direccion,movil,
+        red_youtube,red_Linkedin,direccion,movil,
         horario,email,telefono
     }
 })
