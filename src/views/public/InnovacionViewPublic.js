@@ -1,5 +1,6 @@
 import React  from 'react';
 import ReactHtmlParser from 'react-html-parser'
+import {Helmet, HelmetProvider} from 'react-helmet-async'
 import { useSelector } from 'react-redux';
 import InnovacionItem from '../../components/innovacion/InnovacionItem';
 import Footer from '../../components/layout/Footer';
@@ -8,7 +9,8 @@ const InnnovacionViewPublic = () => {
     const innovacion = useSelector(state => state.innovacion)
     const {title,fotoPrincipal,descripcion,galeria} = innovacion;
     return (
-            <>
+            <HelmetProvider>
+                <Helmet> <title >ENERGYT | Innovación </title></Helmet>
                 <Nav />
                     <h1 className='title_innovacion titulo'>{title}</h1>
                     <section className='section_uno'>
@@ -35,7 +37,7 @@ const InnnovacionViewPublic = () => {
                         </div>
                     </section>
                 <Footer/>
-            </>
+            </HelmetProvider>
     )
 }
 
