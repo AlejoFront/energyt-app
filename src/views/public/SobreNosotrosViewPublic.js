@@ -24,17 +24,6 @@ const SobreNosotrosViewPublic = () => {
                         <h3 className="subtitulo">Visión</h3>
                         <p> {vision.descripcion} </p>
                     </div>
-                    <div className="valores__corporativos">
-                        <h3 className="subtitulo">Valores Corporativos</h3>
-                        <figure className="img">
-                            <div className='img__item'></div>
-
-                        </figure>
-                        <div className="texto">
-                            <h4> </h4>
-                            <p> </p>
-                        </div>
-                    </div>
                 </div>
             </section>
             <section className="politicas">

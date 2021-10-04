@@ -4,8 +4,10 @@ import { clients } from '../../directories/clients'
 import ModalClientes from '../../components/clients/ModalClientes'
 import NuestrosClientes from '../../components/clients/NuestrosClientes'
 import { ICON__LOGO } from '../../directories/images'
+import { useSelector } from 'react-redux'
+import ItemValores from '../../components/valoresCorp/ItemValores'
 const PrincipalViewPublic = () => {
-
+    const {valores} = useSelector(state => state.valores)
     return (
         <Layout title='Inicio'>
             <section className="contenedor acerca-de">
@@ -50,6 +52,21 @@ const PrincipalViewPublic = () => {
                    />
                ))
             }
+            <section className='valores_corp'>
+                <div className='contenedor'>
+                    <h3 className="titulo">Valores Corporativos</h3>
+                    <div className='val_gal'>
+                        {
+                            valores.map(data => (
+                                <ItemValores
+                                    key={data.id}
+                                    data={data}
+                                />  
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
         </Layout>
     )
 }

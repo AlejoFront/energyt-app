@@ -5,6 +5,7 @@ import FooterReducer from '../reducer/FooterReducer';
 import { InnovacionReducer } from '../reducer/InnovacionReducer';
 import {QueHacemosReducer, ProjectsReducer} from '../reducer/QueHacemosReducer';
 import { EstadosFinancierosReducer, MisionReducer, PoliticasReducer, ProteccionDatosReducer, VisionReducer } from '../reducer/SobreNosotrosReducer';
+import { ValoresReducer } from '../reducer/ValoresReducer';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
@@ -14,6 +15,7 @@ const reducer = combineReducers({
     mision: MisionReducer,
     vision: VisionReducer,
     queHacemos: QueHacemosReducer,
+    valores: ValoresReducer,
     projects: ProjectsReducer,
     politicas: PoliticasReducer,
     estadosFinancieros: EstadosFinancierosReducer,

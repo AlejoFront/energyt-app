@@ -20,6 +20,7 @@ const Dashboard = ({children}) => {
                     <li><NavLink exact to='/que-hacemos'>Que Hacemos</NavLink></li>
                     <li><NavLink exact to='/politicas'>Politicas</NavLink></li>
                     <li><NavLink exact to='/proyectos'>Proyectos</NavLink></li>
+                    <li><NavLink exact to='/valores-corporativos'>Valores Corporativos</NavLink></li>
                     <li><NavLink exact to='/estados-financieros'>Estados Financieros</NavLink></li>
                     <li><NavLink exact to='/proteccion-de-datos'>Proteccion de datos</NavLink></li>
                     <li><NavLink exact to='/innovacion'>Innovación</NavLink></li>

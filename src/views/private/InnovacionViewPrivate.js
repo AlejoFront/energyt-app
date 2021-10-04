@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactHtmlParser from 'react-html-parser'
 import { useDispatch, useSelector } from 'react-redux'
 import InnovacionGalItem from '../../components/innovacion/InnovacionGalItem'
 import Dashboard from '../../components/layout/Dashboard'
@@ -99,7 +100,7 @@ const InnovacionViewPrivate = () => {
                     {
                         edit
                         ? <CKEditor key='ckInn' editor={ClassicEditor} data={descripcionUp} onChange={(e, editor) => setDescripcionUp(editor.getData())} />
-                        :<p>{innovacion.descripcion}</p>
+                        :<article>{ReactHtmlParser(innovacion.descripcion)}</article>
                     }
                 </div>
                 <h3 className='titulo'>Galeria</h3>

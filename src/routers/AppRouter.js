@@ -16,6 +16,8 @@ import { startLoadProjects, startLoadQueHacemos } from '../reducer/QueHacemosRed
 import { getInnovacion } from '../helpers/InnovacionHelpers'
 import { startLoadInnovacion } from '../reducer/InnovacionReducer'
 import { auth } from '../firebase/firebase'
+import { getValoresCorp } from '../helpers/ValoresCorporativosHelpers'
+import { startLoadValoresCorp } from '../reducer/ValoresReducer'
 
 const AppRouter = () => {
     const {loading, isAuthenticated} = useSelector(state => state.auth)
@@ -55,6 +57,9 @@ const AppRouter = () => {
         getProteccionDatos()
         .then(response => dispatch(startLoadProteccion(response)))
         .catch(e => console.log(e));
+        getValoresCorp()
+        .then(response => dispatch(startLoadValoresCorp(response)))
+        .catch(e => console.log(e))
         getInnovacion()
         .then(response => {
             dispatch(startLoadInnovacion(response));

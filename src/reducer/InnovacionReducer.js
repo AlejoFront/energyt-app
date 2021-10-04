@@ -19,7 +19,7 @@ const InnovacionReducer = (state = initialStateInnovacion, action) => {
         case INNOVACION_ADD:
             return {
                 ...state,
-                galeria: [action.payload, ...state.galeria]
+                galeria: [...state.galeria,action.payload]
             }
         case INNOVACION_UPDATE:
             return {
