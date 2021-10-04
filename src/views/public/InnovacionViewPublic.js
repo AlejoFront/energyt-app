@@ -10,7 +10,7 @@ const InnnovacionViewPublic = () => {
     const {title,fotoPrincipal,descripcion,galeria} = innovacion;
     return (
             <HelmetProvider>
-                <Helmet> <title >ENERGYT | Innovación </title></Helmet>
+                <Helmet> <title >ENERGYT | {`Innovación`} </title></Helmet>
                 <Nav />
                     <h1 className='title_innovacion titulo'>{title}</h1>
                     <section className='section_uno'>
