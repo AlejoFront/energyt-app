@@ -455,6 +455,41 @@ header .wave {
     width: 70%;
   }
 }
+.valores_corp .contenedor .val_gal {
+  flex-direction: column;
+}
+.valores_corp .contenedor .val_gal .picture {
+  width: 60%;
+  margin: auto;
+}
+
+.valores_corp .contenedor .val_gal {
+  flex-direction: column;
+}
+.valores_corp .contenedor .val_gal .picture {
+  width: 80%;
+  margin: auto;
+}
+
+.valores_corp .contenedor .val_gal {
+  flex-direction: column;
+}
+.valores_corp .contenedor .val_gal .picture {
+  width: 100%;
+  margin: auto;
+}
+
+.valores_corp .contenedor .val_gal {
+  flex-direction: column;
+}
+.valores_corp .contenedor .val_gal .picture {
+  width: 100%;
+  margin: auto;
+}
+.valores_corp .contenedor .val_gal .picture > .picture__container {
+  padding: 20px;
+}
+
 .show {
   z-index: 10;
   position: fixed;
